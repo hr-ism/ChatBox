@@ -1,5 +1,5 @@
 <?php
 
-$dbc = mysqli_connect("localhost","root","","chat") or die("Connection Unsuccessfull.");
+$dbc = mysqli_connect("localhost","root","","chat") or die("Connection Failed.");
 
 ?>
