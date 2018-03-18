@@ -15,12 +15,14 @@
 		border: 1px solid;
 		border-radius: 5px;
 		box-shadow: inset 0px 0px 10px;
+		overflow-x: scroll;
 	}
 	p{
 		font-family: Calibri;
 		font-style: italic;
 		padding: 10px;
 		display: table;
+		max-width: 100%;
 		background-color: #ffffff;
 		border: 1px solid;
 		border-radius: 5px;

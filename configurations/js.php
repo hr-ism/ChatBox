@@ -18,6 +18,26 @@
         url = new URL(url_string);
 		x = url.searchParams.get("name");
 
+		$(function() {
+		    $("#message").keypress(function (e) {
+		        if(e.which == 13 && !e.shiftKey && $("#message").val()!="") {
+					$.ajax({
+					     url: 'chatlog.php',
+					     type: 'POST',
+					     data: {
+					     	send: $("#sendMessageBtn").val(),
+					     	name: $("#name").val(),
+					     	message: $("#message").val()
+					     },
+					     success: function(data){
+					     	$("#message").val("");
+					     },
+				    });
+		            e.preventDefault();
+		        }
+		    });
+		});
+
 		$("#sendMessageBtn").on("click",function(){
 			if($("#message").val()!=""){
 				$.ajax({
