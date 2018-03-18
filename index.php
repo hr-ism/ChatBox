@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1 style="text-align: center; text-shadow: 1px 1px 3px;">Chatbox</h1>
+		<h1 style="color: #ffffff; text-align: center; text-shadow: 1px 1px 3px black;">Chatbox</h1>
 
 	    <div id="display">
 
