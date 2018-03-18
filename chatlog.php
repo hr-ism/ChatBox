@@ -9,11 +9,11 @@
 			$q = "INSERT INTO chatroom (name, message) VALUES ('$name', '$message')";
 			$r = mysqli_query($dbc,$q);
 
-			$q = "SELECT COUNT (id) FROM chatroom ORDER BY id ASC";
-			$r = mysqli_query($dbc,$q);
+			$q = "SELECT COUNT(id) AS num FROM chatroom ORDER BY id ASC";
+			$r = mysqli_fetch_assoc(mysqli_query($dbc,$q));
 
-			if($r>100){
-				$q = "DELETE TOP (1) FROM chatroom";
+			if($r['num']>6){
+				$q = "DELETE FROM chatroom LIMIT 1;";
 				mysqli_query($dbc,$q);
 			}					
 			
@@ -28,17 +28,10 @@
 		if($row['name']==$_GET['name']){
  ?>
 
-<div class="chat self alert alert-success">
-	<b style="color: black; float: right">You</b>
-	<br>
-	<p><?php echo $row['message']; ?></p>
-</div>
+<p><b><u style="color: blue;">You</u> : </b><?php echo $row['message']; ?></p>
 
 <?php }else{ ?>
 
-<div class="chat stranger alert alert-info">
-	<b style="color: black;"><?php echo $row['name']; ?></b>
-	<p><?php echo $row['message']; ?></p>
-</div>
+<p><b><u><?php echo $row['name']; ?></u> : </b><?php echo $row['message']; ?></p>
 
 <?php }} ?>
