@@ -1,10 +1,10 @@
-<?php error_reporting(0); ?>
+<?php //error_reporting(0); ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 
-	<title>IIT(ISM) Chatbox</title>
+	<title>Chatbox</title>
 
 	<?php include("configurations/css.php"); ?>
 	
@@ -12,23 +12,20 @@
 
 </head>
 <body>
+	<div class="container">
+		<h1 style="text-align: center; text-shadow: 1px 1px 3px;">Chatbox</h1>
 
-	<div class="header">
-		<h2><b style="text-shadow: 2px 2px 5px;"><u>IIT</u> (<u>ISM</u>) </b><span class="label label-default">Chatbox</span></h2>
-	</div>
+	    <div id="display">
 
-    <div class="chatlog well well-lg" id="display">
-
-    	<!-- for chatlog -->
-    
-    </div>
-
-	<div>
-		<input type="text" name="name" id="name" value="<?php echo $_GET['name']; ?>" hidden></input>
-		<div class="input-group">
-    		<textarea class="form-control" id="message" name="message" rows="2" placeholder="Enter your message"></textarea>
-	    	<div class="input-group-addon"><input class="btn btn-success" id="sendMessageBtn" name="send" type="button" value="Send"></div>
+	    	<!-- for chatlog -->
+	    
 	    </div>
+
+		<input type="text" name="name" id="name" value="<?php echo $_GET['name']; ?>" hidden></input>
+		<div style="padding: 5px;">
+			<textarea style="width: 100%;" id="message" name="message" placeholder="Enter your message"></textarea>
+	    	<input id="sendMessageBtn" name="send" type="button" value="Send">
+    	</div>
 	</div>
 
 </body>
