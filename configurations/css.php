@@ -1,7 +1,4 @@
 <style>
-	group{
-		display: inline-block;
-	}
 	.container{
 		width: 50%;
 		padding: 10px;
