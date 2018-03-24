@@ -4,7 +4,7 @@
 		if(isset($_POST['send'])==1){
 			
 			$name = $_POST['name'];
-			$message = $_POST['message'];
+			$message = mysqli_real_escape_string($dbc, $_POST['message']);
 
 			$q = "INSERT INTO chatroom (name, message) VALUES ('$name', '$message')";
 			$r = mysqli_query($dbc,$q);
